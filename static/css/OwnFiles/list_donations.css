@@ -1,0 +1,145 @@
+/*CONSIDER THAT SOME CSS IS IN TEMPLATEMO-PLOT-LISTING.CSS*/
+.header-area {
+    background-color: rgba(0, 0, 0, 0.218) !important;
+}
+.header-area:hover {
+    background-color: rgb(255, 255, 255) !important;
+    transition: 0.3s ease-out;
+}
+.header-area:hover * {
+    color: black !important;
+    transition: 0.3s ease-out;
+}
+.header-area:hover .active {
+    color:rgb(44, 194, 144) !important;
+}
+/*Main area of list_donations*/
+#main-donations {
+    background-image: url(/static/media/huerto.jpg);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+#back {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+table, th, td{
+    border: 0px solid black;
+    border-radius:0px;
+    padding: 5px;
+    background-color:white;
+    color: rgb(0, 0, 0);
+}
+table {
+    border-radius:20px;
+    background-color:black;
+    padding:2px;
+    text-align: center;
+    width: 100%;
+}
+th {
+  background-color: #00e9a7;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+th:nth-child(1) {
+    border-top-left-radius:20px;
+}
+th:nth-child(6) {
+    border-top-right-radius:20px;
+}
+tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+}
+
+/* Change the color of the a href*/
+a {
+    color:#8A7100;
+}
+.index-button {
+    background-color: #00e9a7;
+    border-radius: 20px;
+}
+.index-button:hover {
+    background-color: #029e70 !important;
+    border-radius: 20px;
+    color:black !important;
+}
+.index-button:hover * {
+    color:rgb(0, 0, 0) !important;
+}
+.pages {
+    background-color: grey; 
+    color: white; 
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    border: 2px solid #00e9a7;
+    border-radius: 8px;
+}
+.pages:hover {
+    background-color: rgb(49, 48, 48); 
+    border:2px solid #017151;
+    color:#00e9a7;
+    transition: 0.5s;
+}
+.stats {
+    margin-top: 4px;
+    margin-bottom: 6px;
+    background-color: #017151;
+    border-radius: 20px;
+    display: inline-block; 
+    text-align: center; 
+    color: white; 
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+    margin-left: 80%;
+}
+.stats:hover {
+    background-color: #00412e;
+    color: #56ffcf; 
+    border: 1px solid #00e9a7;
+    transition: 0.5s;
+}
+.table-rows td {
+    background-color: rgb(208, 248, 229);
+    color: black;
+}
+.table-rows:hover td {
+    background-color: #04815ba5;
+    color: white;
+    transition: 0.4s;
+}
+.return {
+    background-color: rgb(208, 248, 229);
+    color: black; 
+    justify-content: center; 
+    align-items: center;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    padding: 10px 10px 10px 10px; 
+    width:200px; 
+    text-align:center; 
+    border-radius:20px; 
+    border:2px solid black;
+}
+.return:hover {
+    background-color: #025139;
+    color: white;  
+    transition: 0.3s;
+}

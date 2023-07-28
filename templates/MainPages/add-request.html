@@ -1,0 +1,112 @@
+{% extends 'MainPages/base.html' %}
+{% block css %}
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/OwnFiles/add_request.css') }}"
+>
+{% endblock %}
+{% block content %}
+<!-- ***** Start of header ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="main-nav">
+                    <!-- ***** Start of Menu ***** -->
+                    <ul class="nav">
+                        <li><a href="{{ url_for('list_requests') }}"><i class="fa fa-eye"></i> pedidos</a></li>
+                        <li><a href="{{ url_for('list_donations') }}"><i class="fa fa-eye"></i> donaciones</a></li>
+                        <li><a href="{{ url_for('add_request') }}" class="active"><i class="fa fa-plus"></i> pedido</a></li>
+                        <li><a href="{{ url_for('add_donation') }}"><i class="fa fa-plus"></i> donación</a></li> 
+                        <li><a href="{{ url_for('index') }}" class="index-button"><i class="fa fa-home"></i> Ir al inicio</a></li> 
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>
+                    <!-- ***** End of Menu ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** End of header ***** -->
+<!-- ***** Main text of the page ***** -->
+<div class="page-heading" id="main-request">
+    <div class="container" id="back">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="top-text header-text" style="color: white;">
+                    <h6>Agregar un pedido</h6>
+                    <h2>Rellene la información solicitada para añadir su pedido.</h2>
+                    <h6>Los campos con (*) son obligatorios</h6>
+                    <br><br>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <form id="contact" name="form-pedido" method="post" enctype="multipart/form-data">
+                            <div class="alert alert-danger" role="alert" id="val-box" hidden>
+                                <h6 id="val-msg"> a </h6>
+                                <ul id="val-list"></ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <select name="region" id="region" required>
+                                        <option value="" disabled selected>(*) Seleccione una región</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select name="comuna" id="comuna" required>
+                                        <option value="" disabled selected>(*) Seleccione comuna</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" id="comuna_id" name="comuna_id">
+                                <div class="col-lg-6">
+                                    <select name="tipo" id="tipo" required>
+                                        <option value="" disabled selected>(*) Seleccione tipo de pedido</option>
+                                        <option value="Fruta">Fruta</option>
+                                        <option value="Verdura">Verdura</option>
+                                        <option value="Otro">Otro</option>
+                                    </select> 
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input type="text" name="descripcion" id="descripcion" placeholder="(*) Descripción del pedido" required>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input type="text" name="cantidad" id="cantidad" placeholder="(*) Cantidad" required>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input type="text" name="nombre" id="nombre" placeholder="(*) Nombre de solicitante" required>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input type="email" name="email" id="email" placeholder="(*) Email" required>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <input type="text" name="celular" id="celular" placeholder="Nº celular (+569 12345678)">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <button type="button" id="form-submit" class="main-button "><i class="fa fa-plus"></i> Agregar pedido</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static', filename='js/OwnFiles/add_request.js') }}"></script>
+{% endblock %}

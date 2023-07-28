@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SustenSite; pedidos y donaciones</title>
+    {% block css %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"  
+        rel="stylesheet"
+    >
+    <!-- Bootstrap CSS -->
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/bootstrap/bootstrap.min.css') }}"
+    >
+    <!-- Additional CSS Files -->
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/template/fontawesome.css') }}"
+    >
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/template/templatemo-plot-listing.css') }}"
+    >
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/template/animated.css') }}"
+    >
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/template/owl.css') }}"
+    >
+    <link 
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css"
+    >
+    <link 
+        rel="icon" 
+        href="{{ url_for('static', filename='media/logoapp.png') }}"
+    >
+  </head>
+  <body>
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %} 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.1/leaflet.markercluster.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/template/owl-carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/template/animation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/template/imagesloaded.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/template/custom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/template/tabs.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+    {% block javascript %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,61 @@
+{% extends 'TablesDetail/base.html' %}
+{% block css %}
+<style>
+    th:nth-child(1) {
+        border-top-left-radius:20px;
+    }
+    th:nth-child(12) {
+        border-top-right-radius:20px;
+    }
+</style>
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/OwnFiles/info_tables.css') }}"
+>
+{% endblock %}
+{% block content %}
+<table>
+<tr>
+    <th> Región </th>
+    <th> Comuna </th>
+    <th> Calle y número </th>
+    <th> Tipo donación</th>
+    <th> Cantidad </th>
+    <th> Fecha disponibilidad </th>
+    <th> Descripción </th>
+    <th> Condiciones para retirar </th>
+    <th> Foto donación </th> 
+    <th> Nombre donante </th>
+    <th> email de contacto </th>
+    <th> número celular de contacto</th>      
+</tr>
+<tr> 
+    <td> {{ donation[0] }} </td>
+    <td> {{ donation[1] }} </td>
+    <td> {{ donation[2] }} </td>
+    <td> {{ donation[3] }} </td>
+    <td> {{ donation[4] }} </td>
+    <td> {{ donation[5] }} </td>
+    <td> {{ donation[6] }} </td>
+    <td> {{ donation[7] }} </td>
+    {% if amount == 1 %}
+        <td style="text-align: left;"><img id="myImage" src="{{ url_for('static', filename=photo[0]) }}" alt="Photo" onclick="showImage()" style="width: 640px; height: 480px;"></td>
+    {% else %}
+        <td style="text-align: left;"><img id="myImage" src="{{ url_for('static', filename=photo[0]) }}" alt="Photo" onclick="showImage()" style="width: 640px; height: 480px;"><button class="mini-button" id="change-photo" data-photos="{{ photo|join(',') }}">Ver otra foto</button></td>
+    {% endif %}
+    <td> {{ donation[8] }} </td>
+    <td> {{ donation[9] }} </td>
+    <td> {{ donation[10] }} </td>
+</tr>
+</table>
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img src="{{ url_for('static', filename=photo[0]) }}" class="modal-content" id="modalImage" alt="Photo">
+    <div id="caption"></div>
+</div>     
+
+<a href="{{ url_for('list_donations') }}" class="return">Volver a donaciones</a>
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static', filename='js/OwnFiles/donation_info.js') }}"></script>
+{% endblock %}

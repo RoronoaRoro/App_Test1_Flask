@@ -1,0 +1,61 @@
+{% extends 'MainPages/base.html' %}
+{% block css %}
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/OwnFiles/stats.css') }}"
+>
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/OwnFiles/index.css') }}"
+>
+{% endblock %}
+{% block content %}
+<!-- ***** Start of Header ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Start of Menu ***** -->
+                    <ul class="nav">
+                        <li><a href="{{ url_for('list_requests') }}"><i class="fa fa-eye"></i> pedidos</a></li>
+                        <li><a href="{{ url_for('list_donations') }}"><i class="fa fa-eye"></i> donaciones</a></li>
+                        <li><a href="{{ url_for('add_request') }}"><i class="fa fa-plus"></i> pedido</a></li>
+                        <li><a href="{{ url_for('add_donation') }}"><i class="fa fa-plus"></i> donación</a></li> 
+                        <li><a href="{{ url_for('index') }}" class="index-button"><i class="fa fa-home"></i> Ir al inicio</a></li> 
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>
+                    <!-- ***** End of Menu ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** End of Header ***** -->
+<!-- ***** Main text ***** -->
+<div class="main-banner">
+    <div class="container">
+        <div class="row">
+            <div class="stats-container col-10">
+                <h2 style="margin-bottom: 30px;"> Se presentan gráficos de información relacionada a las donaciones y pedidos realizados</h2>
+                <figure class="highcharts-figure" style="margin-bottom: 40px;">
+                    <div class="highcharts-content" id="container-donation"></div>
+                    <p class="highcharts-description" style="color: white;">
+                        El anterior grafico presenta el numero de donaciones hechas por tipo.
+                    </p>
+                </figure>
+                <figure class="highcharts-figure">
+                    <div class="highcharts-content" id="container-request"></div>
+                    <p class="highcharts-description" style="color: white;">
+                        El anterior grafico presenta el numero de pedidos hechos por tipo.
+                    </p>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}   
+{% block javascript %}
+<script src="{{ url_for('static', filename='js/OwnFiles/stats.js') }}"></script>
+{% endblock %}

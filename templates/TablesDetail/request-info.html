@@ -1,0 +1,47 @@
+{% extends 'TablesDetail/base.html' %}
+{% block css %}
+<style>
+    th:nth-child(1) {
+    border-top-left-radius:20px;
+    }
+    th:nth-child(8) {
+        border-top-right-radius:20px;
+    }
+    table {
+        width: 100%;
+    }
+</style>
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/OwnFiles/info_tables.css') }}"
+>
+{% endblock %}
+{% block content %}
+<table>
+<tr>
+    <th> Región </th>
+    <th> Comuna </th>
+    <th> Tipo pedido </th>
+    <th> Descripción pedido</th>
+    <th> Cantidad </th>
+    <th> Nombre solicitante </th>
+    <th> email solicitante </th>
+    <th> número celular solicitante</th>      
+</tr>
+<tr> 
+    <td> {{ requests[0] }} </td>
+    <td> {{ requests[1] }} </td>
+    <td> {{ requests[2] }} </td>
+    <td> {{ requests[3] }} </td>
+    <td> {{ requests[4] }} </td>
+    <td> {{ requests[5] }} </td>
+    <td> {{ requests[6] }} </td>
+    <td> {{ requests[7] }} </td>
+</tr>
+</table>
+       
+<a href="{{ url_for('list_requests') }}" class="return">Volver a pedidos.</a>
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static', filename='js/OwnFiles/request_info.js') }}"></script>
+{% endblock %}

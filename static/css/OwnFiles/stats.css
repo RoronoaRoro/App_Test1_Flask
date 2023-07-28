@@ -1,0 +1,43 @@
+.stats-container {
+    padding: 1rem;
+    background: #025139;
+    border: 2px solid black;
+    border-radius: 0.25em;
+    box-shadow: 0.2em 0.2em 0px 0px black;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    color:white; 
+    text-align: center; 
+    border-top-right-radius: 20px; 
+    border-top-left-radius: 20px;
+}
+.highcharts-content {
+    border: 2px solid black;
+}
+.header-area {
+    background-color: rgba(0, 0, 0, 0.218) !important;
+}
+.header-area:hover {
+    background-color: rgb(255, 255, 255) !important;
+    transition: 0.3s ease-out;
+}
+.header-area:hover * {
+    color: black !important;
+    transition: 0.3s ease-out;
+}
+.header-area:hover .active {
+    color:rgb(44, 194, 144) !important;
+}
+.index-button {
+    background-color: #00e9a7;
+    border-radius: 20px;
+}
+.index-button:hover {
+    background-color: #029e70 !important;
+    border-radius: 20px;
+    color:black !important;
+}
+.index-button:hover * {
+    color:rgb(0, 0, 0) !important;
+}

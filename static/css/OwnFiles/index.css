@@ -1,0 +1,70 @@
+/*CONSIDER THAT SOME CSS IS IN TEMPLATEMO-PLOT-LISTING.CSS*/
+.header-area {
+    background-color: rgba(0, 0, 0, 0.218) !important;
+}
+.header-area:hover {
+    background-color: rgb(255, 255, 255) !important;
+    transition: 0.3s ease-out;
+}
+.header-area:hover * {
+    color: black !important;
+    transition: 0.3s ease-out;
+}
+.header-area:hover .active {
+    color:rgb(44, 194, 144) !important;
+}
+.index-button {
+    background-color: #00e9a7;
+    border-radius: 20px;
+    width: auto;
+    padding: 10px;
+}
+.index-button:hover {
+    background-color: #029e70 !important;
+    border-radius: 20px;
+    color:black !important;
+}
+.index-button:hover * {
+    color:rgb(0, 0, 0) !important;
+}
+.stats {
+    background-color: #017151;
+    border-radius: 20px;
+    display: inline-block; 
+    text-align: center; 
+    color: white; 
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+}
+.stats:hover {
+    background-color: #00412e;
+    color: #56ffcf; 
+    border: 1px solid #00e9a7;
+    transition: 0.5s;
+}
+#map { 
+    height: 400px;
+    margin-bottom: 30px;
+    border:2px solid black;
+    border-radius: 20px;
+    z-index: 20;
+}
+.map-text {
+    background-color: rgba(255, 255, 255, 0.25); 
+    color:black; 
+    margin-bottom:20px; 
+    border: 1px solid black;
+    border-radius:10px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+.stats-text {
+    text-align: right;
+    margin-left: 10px;
+}
+#stats-content {
+    margin-bottom: 12px;
+    background-color: rgba(255, 255, 255, 0.093);
+    border-radius: 10px;
+    color:black;
+}

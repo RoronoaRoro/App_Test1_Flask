@@ -1,0 +1,83 @@
+{% extends 'MainPages/base.html' %}
+{% block css %}
+<link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/OwnFiles/list_donations.css') }}"
+>
+{% endblock %}
+{% block content %}
+<!-- ***** Start of Header  ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Start of Menu ***** -->
+                    <ul class="nav">
+                        <li><a href="{{ url_for('list_requests') }}"><i class="fa fa-eye"></i> pedidos</a></li>
+                        <li><a href="{{ url_for('list_donations') }}" class="active"><i class="fa fa-eye"></i> donaciones</a></li>
+                        <li><a href="{{ url_for('add_request') }}"><i class="fa fa-plus"></i> pedido</a></li>
+                        <li><a href="{{ url_for('add_donation') }}"><i class="fa fa-plus"></i> donación</a></li> 
+                        <li><a href="{{ url_for('index') }}" class="index-button"><i class="fa fa-home"></i> Ir al inicio</a></li> 
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>
+                    <!-- ***** End of Menu ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** End of Header ***** -->
+<!-- ***** Main text ***** -->
+<div class="page-heading" id="main-donations">
+    <div class="container" id="back">
+        <div class="col-12">
+            <a href="{{ url_for('stats') }}" class="stats">Estadísticas de donaciones y pedidos</a>
+        </div>
+        <div class="row" style="opacity: 92%;">
+            <div class="col-12" style="text-align: center;">
+                <div class="top-text" style="width: 100%; margin-bottom: 40px;">
+                    <h6>Lista de donaciones</h6>
+                    <h2>Seleccione la donación de la cual quiera conocer más detalles</h2>
+                </div>
+                <!-- ***** This section is the header of the table ***** --> 
+                <table style="justify-content: center; align-items: center;">
+                <tr>
+                    <th> Comuna </th>
+                    <th> Tipo </th>
+                    <th> Cantidad </th>
+                    <th> Fecha </th>
+                    <th> Nombre </th>
+                    <th> Foto </th>       
+                </tr>
+                {% for i in range(donations|length) %}
+                    {% set donation = donations[i] %}
+                    {% set photo = photos[i] %}
+                    <tr data-id="{{ donation[0] }}" class="table-rows">
+                        <td>{{ donation[1] }}</td>
+                        <td>{{ donation[2] }}</td>
+                        <td>{{ donation[3] }}</td>
+                        <td>{{ donation[4] }}</td>
+                        <td>{{ donation[5] }}</td>
+                        <td style="margin-left: 10px;"><img src="{{ url_for('static', filename=photo[0]) }}" alt="Photo" style="width: 100px; height: 100px; border-radius: 20px;"></td>
+                    </tr>
+                {% endfor %}
+                </table>
+                <div class="col-6 offset-3" style="margin-top: 30px; margin-bottom: 50px;">
+                    <div style="margin-bottom: 10px;">Página actual: {{page}}</div>
+                    {% if page > 1 %}
+                      <a href="{{ url_for('list_donations', page=page-1) }}" class="pages">Anterior</a>
+                    {% endif %}
+                    {% if total_donations > (page * per_page) %}
+                      <a href="{{ url_for('list_donations', page=page+1) }}" class="pages">Siguiente</a>
+                    {% endif %}
+                </div>
+                <a href="{{ url_for('index') }}" class="return">Volver a página principal.</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static', filename='js/OwnFiles/list_donations.js') }}"></script>
+{% endblock %}
