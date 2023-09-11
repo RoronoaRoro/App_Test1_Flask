@@ -183,6 +183,8 @@ def add_donation():
 @app.route('/list-requests')
 def list_requests():
     total_requests=get_total_requests()
+    if not total_requests:
+        return redirect(url_for('add_request'))
     # Get the actual page number from the URL
     page = request.args.get('page', default=1, type=int)
     per_page = 5  # Number of donations per page
@@ -204,6 +206,8 @@ def list_requests():
 @app.route('/list-donations')
 def list_donations():
     total_donations=get_total_donations()
+    if not total_donations:
+        return redirect(url_for('add_donation'))
     # Get the actual page number from the URL
     page = request.args.get('page', default=1, type=int)
     per_page = 5  # Number of donations per page
